@@ -5,11 +5,9 @@
  * @format
  */
 
-import React, {useRef, useEffect, useState} from 'react';
+import React, {useRef, useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-const Stack = createNativeStackNavigator();
 
 import type {PropsWithChildren} from 'react';
 import {
@@ -22,29 +20,26 @@ import {
   View,
   Animated,
   Button,
+  GestureResponderEvent,
 } from 'react-native';
 
-import MovieList from './components/movieList';
-import MovieDetail from './components/movieDetail';
+type SectionProps = PropsWithChildren<{
+  navigation: any;
+  route: any;
+}>;
 
-function App(): React.JSX.Element {
+const MovieDetail = ({navigation, route}: SectionProps) => {
+  const isDarkMode = useColorScheme() === 'dark';
+
+  const movieItem = route.params.item;
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="MovieList"
-          component={MovieList}
-          options={{title: 'test'}}
-        />
-        <Stack.Screen
-          name="MovieDetail"
-          component={MovieDetail}
-          options={{title: 'test'}}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <SafeAreaView>
+      <Text>Movie Detail</Text>
+      <Text>{movieItem.title}</Text>
+      <Text>{movieItem.releaseYear}</Text>
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   sectionContainer: {
@@ -65,4 +60,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default MovieDetail;
