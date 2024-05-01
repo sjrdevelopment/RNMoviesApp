@@ -33,16 +33,21 @@ type SecProps = PropsWithChildren<{
 }>;
 
 const MovieItem = ({item, navigation}: SectionProps) => {
+  const movieItemStyles = StyleSheet.create({
+    container: {
+      marginTop: 16,
+    },
+  });
+
   return (
-    <>
-      <Text>{item.title}</Text>
+    <View style={movieItemStyles.container}>
       <Button
         onPress={() => {
           navigation.navigate('MovieDetail', {item: item});
         }}
-        title="yo"
+        title={item.title}
       />
-    </>
+    </View>
   );
 };
 
@@ -66,49 +71,6 @@ const MovieList = ({navigation}: SecProps) => {
 
   return (
     <ScrollView>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
-      <Text>test</Text>
       {movieData &&
         movieData.length > 0 &&
         movieData.map((movie: {title: string}) => {
