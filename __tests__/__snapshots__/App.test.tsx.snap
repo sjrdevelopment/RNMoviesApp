@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot style Jest tests renders App correctly 1`] = `
+<p>
+  test
+</p>
+`;
+
+exports[`Snapshot style Jest tests renders MovieDetail component correctly 1`] = `
+<RCTSafeAreaView>
+  <Text>
+    Movie Detail
+  </Text>
+  <Text>
+    My Movie
+  </Text>
+  <Text>
+    1998
+  </Text>
+</RCTSafeAreaView>
+`;

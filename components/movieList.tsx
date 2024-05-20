@@ -5,23 +5,10 @@
  * @format
  */
 
-import React, {useRef, useEffect, useState} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import React, {useEffect, useState} from 'react';
 
 import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-  Animated,
-  Button,
-  GestureResponderEvent,
-} from 'react-native';
+import {ScrollView, StyleSheet, View, Button} from 'react-native';
 
 type SectionProps = PropsWithChildren<{
   navigation: any;
@@ -80,7 +67,7 @@ const MovieList = ({navigation}: SecProps) => {
   );
 };
 
-const styles = StyleSheet.create({
+/*const styles = StyleSheet.create({
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
@@ -97,6 +84,6 @@ const styles = StyleSheet.create({
   highlight: {
     fontWeight: '700',
   },
-});
+});*/
 
 export default MovieList;

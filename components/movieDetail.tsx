@@ -5,22 +5,12 @@
  * @format
  */
 
-import React, {useRef, useEffect} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import React from 'react';
 
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-  Animated,
-  Button,
-  GestureResponderEvent,
+  /*StyleSheet,*/ Text /*useColorScheme*/,
 } from 'react-native';
 
 type SectionProps = PropsWithChildren<{
@@ -28,9 +18,7 @@ type SectionProps = PropsWithChildren<{
   route: any;
 }>;
 
-const MovieDetail = ({navigation, route}: SectionProps) => {
-  const isDarkMode = useColorScheme() === 'dark';
-
+const MovieDetail = ({/*navigation,*/ route}: SectionProps) => {
   const movieItem = route.params.item;
   return (
     <SafeAreaView>
@@ -41,23 +29,23 @@ const MovieDetail = ({navigation, route}: SectionProps) => {
   );
 };
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+// const styles = StyleSheet.create({
+//   sectionContainer: {
+//     marginTop: 32,
+//     paddingHorizontal: 24,
+//   },
+//   sectionTitle: {
+//     fontSize: 24,
+//     fontWeight: '600',
+//   },
+//   sectionDescription: {
+//     marginTop: 8,
+//     fontSize: 18,
+//     fontWeight: '400',
+//   },
+//   highlight: {
+//     fontWeight: '700',
+//   },
+// });
 
 export default MovieDetail;
